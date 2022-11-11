@@ -21,6 +21,7 @@ jobs:
     - run: |
         echo ${{steps.json_properties.outputs.name}}
         echo ${{steps.json_properties.outputs.version}}
+        echo ${{steps.json_properties.output.keywords[2]}}
         
     - name: get specified property
       id: repository_type
