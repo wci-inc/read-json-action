@@ -18,8 +18,18 @@ async function run() {
 
     if (pathArr.length > 0) {
       json = pathArr.reduce(
-        (obj, key) =>
-          key && obj && obj[key] !== "undefined" ? obj[key] : undefined,
+        (obj, key) =>{
+          const idxStrReg = key.match(/(\[)[0-9]+(])/);
+          if(idxStrReg){
+            const arrKey = key.replace(/(\[)[0-9]+(])/, "");
+            const idxReg = idxStrReg[0].match(/[0-9]+/);
+            if (idxReg){
+              const idx = idxReg[0];
+              return key && obj && obj[arrKey] !== "undefined" && obj[arrKey][idx] !== "undefined" ? obj[arrKey][idx] : undefined;
+            }
+          }
+          return key && obj && obj[key] !== "undefined" ? obj[key] : undefined;
+        },
         json
       );
     }
