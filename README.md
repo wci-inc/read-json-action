@@ -1,6 +1,8 @@
-# github-action-json-file-properties
+# ActionReadJSON
 
 Read JSON file and set properties to `output` of github action `steps`.
+
+**This forked repo support json array comparing to the upper one.** An example can be find [here](https://github.com/ActionsTool/DockerImageBuilder/blob/main/.github/workflows/sharelatex.yml).
 
 ## Usage
 
@@ -12,7 +14,7 @@ Get properties
 ---
 - name: get properties
   id: json_properties
-  uses: zoexx/github-action-json-file-properties@release
+  uses: ActionsTool/ActionReadJSON@main
   with:
     file_path: "package.json"
 
@@ -27,7 +29,7 @@ Get a specified property **value** with `prop_path`
 ---
 - name: get specified property
   id: repository_type
-  uses: zoexx/github-action-json-file-properties@release
+  uses: ActionsTool/ActionReadJSON@main
   with:
     file_path: "package.json"
     prop_path: "repository.type"
