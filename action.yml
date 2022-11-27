@@ -1,4 +1,4 @@
-name: "action-read-json"
+name: "read-json-action"
 description: "GitHub Action to load properties from a JSON file."
 author: "ActionsTools forked from zoexx"
 inputs:

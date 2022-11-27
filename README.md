@@ -1,4 +1,4 @@
-# ActionReadJSON
+# Read JSON Action
 
 Read JSON file and set properties to `output` of github action `steps`.
 
@@ -14,7 +14,7 @@ Get properties
 ---
 - name: get properties
   id: json_properties
-  uses: ActionsTool/ActionReadJSON@main
+  uses: ActionsTools/read-json-action@main
   with:
     file_path: "package.json"
 
@@ -29,7 +29,7 @@ Get a specified property **value** with `prop_path`
 ---
 - name: get specified property
   id: repository_type
-  uses: ActionsTool/ActionReadJSON@main
+  uses: ActionsTools/read-json-action@main
   with:
     file_path: "package.json"
     prop_path: "repository.type"

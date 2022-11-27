@@ -1,5 +1,5 @@
 {
-  "name": "github-action-json-file-properties",
+  "name": "read-json-action",
   "version": "1.0.4",
   "author": "zoexx, yujie",
   "description": "GitHub Action to load properties from a JSON file.",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ActionsTool/ActionReadJSON"
+    "url": "git+https://github.com/ActionsTools/read-json-action"
   },
   "keywords": [
     "actions",
