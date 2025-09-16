@@ -6,6 +6,7 @@ const readFileAsync = util.promisify(fs.readFile);
 async function run() {
   const file_path: string = core.getInput("file_path");
   const prop_path: string = core.getInput("prop_path");
+  const fail_if_not_found: string = core.getInput("fail_if_not_found");
   let pathArr: string[] = [];
 
   if (prop_path) {
@@ -40,7 +41,11 @@ async function run() {
     } else if (json) {
       core.setOutput("value", json);
     } else {
-      core.setFailed(`can not find prop_path: ${prop_path} in json file.`);
+      if (fail_if_not_found == 'true') {
+        core.setFailed(`can not find prop_path: ${prop_path} in json file.`);
+      } else {
+        core.setOutput("value", "");
+      }
     }
   } catch (error) {
     console.log(error);

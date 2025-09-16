@@ -8,6 +8,10 @@ inputs:
   prop_path:
     required: false
     description: "e.g.: key1.key2"
+  fail_if_not_found:
+    required: false
+    description: "fail job if prop_path not found. return value='' if false"
+    default: 'true'
 runs:
   using: "node16"
   main: "dist/index.js"
